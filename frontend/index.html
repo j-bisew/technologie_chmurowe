@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frontend</title>
+</head>
+<body>
+  <h1>Dane z backendu:</h1>
+  <div id="data">Ładowanie...</div>
+  <script>
+    fetch('http://backend:3000/')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('data').innerText = JSON.stringify(data);
+      })
+      .catch(err => {
+        document.getElementById('data').innerText = 'Błąd: ' + err;
+      });
+  </script>
+</body>
+</html>
