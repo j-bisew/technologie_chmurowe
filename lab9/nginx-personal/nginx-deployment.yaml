@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-personal
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx-personal
+  template:
+    metadata:
+      labels:
+        app: nginx-personal
+    spec:
+      containers:
+      - name: nginx
+        image: dzulia/nginx-personal:v1
+        ports:
+        - containerPort: 80

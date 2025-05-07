@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-app
+spec:
+  containers:
+  - name: hello-container
+    image: dzulia/hello-app:v2
+    ports:
+    - containerPort: 80
